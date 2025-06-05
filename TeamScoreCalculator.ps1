@@ -134,35 +134,12 @@ try {
         Write-Host "  - '$propName'"
     }
     
-    # まず、メールアドレス関連の列を直接探す
-    foreach ($propName in $excelData[0].PSObject.Properties.Name) {
-        $lowerName = $propName.ToLower()
-        if ($lowerName -eq "email" -or $lowerName -eq "mail" -or $lowerName -eq "e-mail") {
-            $excelEmailColumn = $propName
-            Write-Host "メールアドレス列を見つけました: '$propName'"
-            break
-        }
-    }
-    
-    # 直接の一致がない場合、日本語のメール列を探す
+    # 日本語のメール列を探す
     if (-not $excelEmailColumn) {
         foreach ($propName in $excelData[0].PSObject.Properties.Name) {
             if ($propName -match "メ") {
                 $excelEmailColumn = $propName
                 Write-Host "日本語のメールアドレス列を見つけました: '$propName'"
-                break
-            }
-        }
-    }
-    
-    # 最後の手段として、値がメールアドレスのような形式かチェック
-    if (-not $excelEmailColumn) {
-        Write-Host "内容からメールアドレス列を検出しています..."
-        foreach ($propName in $excelData[0].PSObject.Properties.Name) {
-            $value = $excelData[0].$propName
-            if ($value -and $value -match "@" -and $value -match "\.") {
-                $excelEmailColumn = $propName
-                Write-Host "内容からメールアドレス列を特定しました: '$propName'"
                 break
             }
         }
