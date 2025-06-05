@@ -1,0 +1,74 @@
+﻿CSVファイルを読み込みました: .\src\supabase\Supabase Snippet Retrieve Team Scores by User.csv
+使用するExcelファイル: C:\Users\leash\team_avgscore_calculator\src\form\ハッカソン2025 _ 投票フォーム(1-1).xlsx
+Excelデータの読み込みが完了しました
+CSVのチーム列: Team A, Team B , Team C, Team D, Team E
+Excelのチーム列: Team A：「画期的なTodoアプリ」の得点を選択してください, Team B ：「使いやすいTodoアプリ」の得点を選択してください, Team C：「普通のTodoアプリ」の得点を選択してください
+
+特定されたチーム:
+- チーム A
+  - CSV列: Team A
+  - Excel列: Team A：「画期的なTodoアプリ」の得点を選択してください
+- チーム B
+  - CSV列: Team B 
+  - Excel列: Team B ：「使いやすいTodoアプリ」の得点を選択してください
+- チーム C
+  - CSV列: Team C
+  - Excel列: Team C：「普通のTodoアプリ」の得点を選択してください
+- チーム D
+  - CSV列: Team D
+  - Excel列: 
+- チーム E
+  - CSV列: Team E
+  - Excel列: 
+
+Excel列名一覧:
+  - 'ID'
+  - '開始時刻'
+  - '完了時刻'
+  - 'メール'
+  - '名前'
+  - '最終変更時刻'
+  - 'Team A：「画期的なTodoアプリ」の得点を選択してください'
+  - 'Team B ：「使いやすいTodoアプリ」の得点を選択してください'
+  - 'Team C：「普通のTodoアプリ」の得点を選択してください'
+日本語のメールアドレス列を見つけました: 'メール'
+Excelファイルには 1 件のメールアドレスがあります (列: メール)
+Excelのメールアドレス例: y
+
+CSVデータからスコアを収集しています...
+  メールアドレス koki.maeda@thinkings.co.jp の有効なスコアが見つかりません
+  メールアドレス leashmeplz+1@gmail.com の有効なスコアが見つかりません
+  メールアドレス leashmeplz@gmail.com の有効なスコアが見つかりません
+  メールアドレス masatoshi.sakata+002@thinkings.co.jp の有効なスコアが見つかりません
+  メールアドレス masatoshi.sakata+003@thinkings.co.jp の有効なスコアが見つかりません
+  メールアドレス skt.ani98+hachason@gmail.com の有効なスコアが見つかりません
+  メールアドレス taiga.sato@thinkings.co.jp の有効なスコアが見つかりません
+  メールアドレス yoheikurioka@gmail.com の有効なスコアが見つかりません
+  メールアドレス yoheikurioka+hack@gmail.com の有効なスコアが見つかりません
+  メールアドレス yohei.kurioka@thinkings.co.jp の有効なスコアが見つかりません
+  メールアドレス yuki.morimoto@thinkings.co.jp の有効なスコアが見つかりません
+  メールアドレス yuta.yoshida@thinkings.co.jp はExcelファイルに存在するためスキップします
+  チーム C のスコア 4 を追加しました（CSVから、メール: yuta.yoshida+vote@thinkings.co.jp）
+  チーム A のスコア 8 を追加しました（CSVから、メール: yuta.yoshida+vote@thinkings.co.jp）
+  チーム D のスコア 5 を追加しました（CSVから、メール: yuta.yoshida+vote@thinkings.co.jp）
+CSV処理サマリー: 12 件のメールを処理、1 件の重複をスキップ
+
+Excelデータからスコアを収集しています...
+  チーム A のスコア 7 を追加しました（Excelから、メール: yuta.yoshida@thinkings.co.jp）
+  チーム B のスコア 10 を追加しました（Excelから、メール: yuta.yoshida@thinkings.co.jp）
+
+スコア収集サマリー:
+- チーム A : 2 件のスコアを収集、合計: 15
+- チーム B : 1 件のスコアを収集、合計: 10
+- チーム C : 1 件のスコアを収集、合計: 4
+- チーム D : 1 件のスコアを収集、合計: 5
+- チーム E : スコアなし
+
+チーム平均スコア:
+チーム A : 7.50 (投票数: 2)
+チーム B : 10.00 (投票数: 1)
+チーム C : 4.00 (投票数: 1)
+チーム D : 5.00 (投票数: 1)
+チーム E : スコアなし
+
+結果を保存しました: .\TeamScoreResults.csv
