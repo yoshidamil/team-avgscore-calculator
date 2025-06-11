@@ -62,10 +62,10 @@ Write-Host "CSVのチーム列: $($csvTeamColumns -join ', ')"
 $excelTeamColumns = @()
 $excelTeamMappings = @{}
 
-# チーム名の列を特定（例: "Team A", "Team B"など）
+# チーム名の列を特定（例: "Team A", "Team Red"など）
 $excelData[0].PSObject.Properties.Name | ForEach-Object {
     $propName = $_
-    if ($propName -match "Team\s+([A-Z])") {
+    if ($propName -match "Team\s+(\w+)") {
         $excelTeamColumns += $propName
         $teamId = $matches[1]
         $excelTeamMappings["Team $teamId"] = $propName
@@ -79,7 +79,7 @@ $teams = @{}
 # CSVのチームを追加
 $csvTeamColumns | ForEach-Object {
     $teamName = $_
-    if ($teamName -match "Team\s+([A-Z])") {
+    if ($teamName -match "Team\s+(\w+)") {
         $teamId = $matches[1]
         $teams[$teamId] = @{
             Id = $teamId
@@ -92,7 +92,7 @@ $csvTeamColumns | ForEach-Object {
 
 # Excelのチームを追加/マージ
 foreach ($teamId in $excelTeamMappings.Keys) {
-    $shortId = $teamId -replace "Team\s+", ""
+    $shortId = $teamId -replace "^Team\s+", ""  # 先頭の "Team " のみを削除
     
     if ($teams.ContainsKey($shortId)) {
         $teams[$shortId].ExcelColumn = $excelTeamMappings[$teamId]
